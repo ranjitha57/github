@@ -13,6 +13,7 @@ final githubReposProvider = FutureProvider<List<dynamic>>((ref) async {
       Uri.parse('https://api.github.com/search/repositories?q=created:>2022-04-29&sort=stars&order=desc'),
     );
 
+
     if (response.statusCode == 200) {
       await dbHelper.delete();
       Map<String, dynamic> data = {'data': response.body};
